@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALLEONAH DESUCATAN PROFILE</title>
+  <style>
+   html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.intro h1 {
+  margin-top: 0; /* removes the top gap */
+  padding-top: 0;
+}
+
+main {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0;
+  padding-bottom: 100px; /* prevents content from hiding behind footer */
+}
+
+/* Footer stays fixed at bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.95rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 2px solid #ff0055;
+  z-index: 999; /* stays above floating shapes */
+}
+
+    /* Animated gradient behind everything */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #330033, #660022, #ff0044,);
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Grid lines on top of gradient */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(#ff0055 1px, transparent 1px),
+        linear-gradient(90deg, #ff0055 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.2;
+      animation: moveGrid 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveGrid {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 60px 60px, 60px 60px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.8rem;
+      color: #ff007f;
+      text-shadow: 0 0 15px #ff007f, 0 0 30px #ff3366;
+      border-bottom: 3px solid #ff0055;
+      background: rgba(0, 0, 0, 0.85);
+    }
+    h1{
+    text-align: center;
+      padding: 10px;
+      
+      color: #f0d9e4;
+      text-shadow: 0 0 15px #ff007f, 0 0 30px #ff3366;
+     
+      
+    }
+
+    /* Floating Squid Game Shapes */
+    .shapes span {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 4px solid #fff;
+      animation: float 12s infinite;
+      opacity: 0.8;
+    }
+    .shapes span.circle { border-radius: 50%; border-color: #ff007f; }
+    .shapes span.square { border-color: #fff; }
+    .shapes span.triangle {
+      width: 0; height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ff3366;
+      background: none;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-900px) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      border: 2px solid #6b0024;
+      box-shadow: 0 0 25px #e6024eaf, 0 0 35px #b1073ffb inset;
+      text-align: center;
+    }
+    .output-container {
+      background-color: #ce0e0063;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      min-height: 600px;
+      border: 2px solid #000000;
+      align-items: flex-start;
+      max-width: 950px;
+      margin: 3rem auto;
+     }
+
+    h2 {
+      color: #ff3366;
+      text-shadow: 0 0 15px #ff0055, 0 0 25px #ff0033;
+      margin-top: 2rem;
+    }
+
+    .me-img {
+      display: block;
+      margin: 1rem auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ff007f;
+      object-fit: cover;
+      box-shadow: 0 0 25px #ff3366, 0 0 35px #ff0033;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.8);
+      text-shadow: 0 0 8px #ff007f;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+    li::before {
+      content: '▶ ';
+      color: #ff3366;
+      text-shadow: 0 0 10px #ff0055;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+ 
+    .navbar ul {
+      list-style-type: none;
+      background-color: #660022;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .navbar a{
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .navbar a:hover{
+      background-color: rgb(240, 56, 56); 
+      color: #fc7f7f;
+    }
+    .navbar li{
+      float: left;
+    }
+    .navbar::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Journey section */ 
+    .timeline { 
+        max-width: 1000px; 
+        margin: 3rem auto;
+         text-align: center;
+         } 
+    .timeline h2 {
+         color: #ff3366; 
+         text-shadow: 0 0 15px #ff0055; 
+         margin-bottom: 2rem; 
+        }
+    .journey-box {
+        width: 100%; 
+        max-width: 850px; 
+        margin: 1.5rem auto; 
+        padding: 1.2rem; 
+        background: rgba(255, 255, 255, 0.05); 
+        border: 2px solid #ff0055;
+         border-radius: 12px; 
+         box-shadow: 0 0 15px #ff0055; 
+         text-align: center; 
+         cursor: pointer; 
+         overflow: hidden; 
+         transition: all 0.6s ease; 
+         height: 90px; /* collapsed height */ 
+        } 
+    .journey-box:hover {
+         height: 600px; /* expand on hover */
+        } 
+    .journey-box h3 { 
+        margin: 0;
+         font-size: 1.5rem; 
+         color: #fff; 
+        } 
+    .journey-box img { 
+        width: 200px; 
+        height: 200px; 
+        border-radius: 10px; 
+        margin-top: 15px; 
+        border: 3px solid #ff007f;
+         object-fit: cover;
+          box-shadow: 0 0 20px #ff3366; 
+          opacity: 0; 
+          transition: opacity 0.6s ease;
+         } 
+    .journey-box p { 
+        font-size: 1rem; 
+        color: #ddd; 
+        margin-top: 15px; 
+        padding: 0 15px; 
+        line-height: 1.9; 
+        opacity: 0;
+         transition: opacity 0.6s ease;
+         } 
+         
+    .journey-box:hover img, .journey-box:hover p {
+         opacity: 1; 
+        }
+       
+    
+        .intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.timeline {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+
+     .intro p {
+          font-size: 1.2rem;
+          color: #f0d9e4;
+          line-height: 1.8;
+}
+
+
+    
+  </style>
+</head>
+<body>
+  <header> SCHOOL LIFE JOURNEY </header>
+
+  <nav class="navbar">
+    <ul>
+        <li><a href="aboutme.html">ABOUT ME</a></li>
+        <li><a href="family.html">FAMILY</a></li>
+        <li><a href="journey.html">JOURNEY</a></li>
+        <li><a href="myarts.html">HOBBIES</a></li>
+        
+        <li><a href="1.html">HOME</a></li>
+    </ul>
+  </nav>
+
+  <!-- Floating shapes -->
+  <div class="shapes">
+    <span class="circle" style="top:110%; left:0%; animation-delay:0s;"></span>
+    <span class="square" style="top:95%; left:5%; animation-delay:2s;"></span>
+    <span class="triangle" style="top:100%; left:10%; animation-delay:1s;"></span>
+    <span class="circle" style="top:90%; left:90%; animation-delay:2s;"></span>
+     
+    <span class="circle" style="top:110%; left:95%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:10%; animation-delay:0s;"></span> 
+   <span class="square" style="top:95%; left:80%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:86%; animation-delay:0s;"></span>
+    <span class="triangle" style="top:100%; left:70%; animation-delay:2s;"></span>
+       <span class="triangle" style="top:100%; left:5%; animation-delay:0s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:2s;"></span>
+
+    <span class="circle" style="top:110%; left:0%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:75%; animation-delay:2s;"></span>
+    
+
+
+   <span class="square" style="top:95%; left:25%; animation-delay:1s;"></span>
+ 
+    <span class="triangle" style="top:100%; left:15%; animation-delay:0s;"></span> 
+    <span class="triangle" style="top:100%; left:97%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:0s;"></span>
+  </div>
+
+  <!-- Timeline Section -->
+  <div class="intro">
+    <h1>School Experience</h1>
+    <p>My school journey has been one of the most meaningful parts of my life. It’s filled with lessons, challenges, and unforgettable memories that helped shape who I am today. From my shy days in elementary school to finding my confidence in college, every step taught me something valuable and made me stronger.</p>
+  </div>
+  
+  <section class="timeline">
+    
+     <div class="journey-box"> 
+        <h3>Elementary School</h3>
+         <img src="images/elemme.jpg" alt="Elementary Photo"> 
+         <p>My elementary life was simple yet full of memories. Back then, I was very shy — I didn’t like taking pictures or even being in one because I was scared and insecure. Pero bisan pa ana, I had five childhood best friends who made my school days so much fun. We always ate together during lunch or snack time and we were classmates from Grade 1 to 3. And those friends made me become a little confident and more friendly.
+
+          I still remember the time nga nihilak gyud ko kay dili na mi classmates, so I begged Mama to transfer me to their section — and luckily, she agreed. That moment showed how much I valued friendship. Until now, we still talk sometimes, though not as often since we’re all busy with life.
+          
+          During my elementary years, I also joined many school activities like DBLC, where our school proudly became the champion! Every year, I joined different school activities. Pero pag Grade 5 to 6, niundang ko kay ni balik akong ka-shy ug insecurities.
+          
+          Still, those years were filled with fun — waking up early for the flag ceremony at 7 a.m., doing the same morning exercises with everyone, and joining school games. It was truly a unique and joyful time, very different from my other school journeys.</p> 
+        
+    </div> <div class="journey-box"> 
+        <h3>High School</h3> 
+        <img src="images/highsclme.jpg" alt="High School Photo">
+         <p> Transitioning to high school felt like stepping into a new world. The school was a bit far from our house, and it was my first time riding a jeep or tricycle alone. Naay time nga tungod sa ka-shy nako, wala ko kaingon ug “para,” mao to nalapas ko sa among balay! Good thing someone else said “para,” so I got off and walked home — luckily, not too far.
+
+          In this stage, I began to discover more about myself. It was during high school nga ni-evolve akong drawing skills — diri ko naka-realize nga kabalo diay ko mo-draw, though di pa kaayo master. I also met teachers who were very strict and gave us tons of projects, but they helped me become more disciplined and hardworking.
+          
+          Sadly, quarantine came and from Grade 8 to 10, we shifted to modular learning. It was challenging, but it also became a time of self-growth. When classes went back to face-to-face, I became more confident and made many new friends. My high school life taught me courage, creativity, and the beauty of stepping out of my comfort zone.</p> </div>
+   
+     <div class="journey-box">
+             <h3>College</h3>
+             <img src="images/collegeme.jpg" alt="College Photo">
+              <p>Now, here I am — in my college chapter. This phase of my life feels both exciting and challenging. My confidence has improved a lot, and I’ve learned to be more competitive, joining school events, games, and activities.
+
+                College made me realize that success doesn’t rely only on notebooks or notes — it’s all about your mindset, determination, and good health. Each day, I’m learning not just lessons from books but also lessons about life itself.
+                
+                I’m hopeful for my future — manifesting that someday, I can become a cum laude. But beyond achievements, I keep my faith strong. I trust God’s timing and believe that everything happens according to His plan. 💖</p> 
+            </div> 
+     
+        </section>
+   
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Alleonah | Know me 🦑
+  </footer>
+</body>
+</html>
+
+
+
+

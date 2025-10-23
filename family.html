@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALLEONAH DESUCATAN PROFILE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+    main{
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 0px;
+    }
+
+    /* Animated gradient behind everything */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #330033, #660022, #ff0044, );
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Grid lines on top of gradient */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(#ff0055 1px, transparent 1px),
+        linear-gradient(90deg, #ff0055 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.2;
+      animation: moveGrid 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveGrid {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 60px 60px, 60px 60px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.8rem;
+      color: #ff007f;
+      text-shadow: 0 0 15px #ff007f, 0 0 30px #ff3366;
+      border-bottom: 3px solid #ff0055;
+      background: rgba(0, 0, 0, 0.85);
+    }
+    h2{
+    text-align: center;
+      padding: 10px;
+      
+      color: #ff007f;
+      text-shadow: 0 0 15px #ff007f, 0 0 30px #ff3366;
+     
+      
+    }
+/* Floating Squid Game Shapes */
+.shapes span {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 4px solid #fff;
+      animation: float 12s infinite;
+      opacity: 0.8;
+    }
+    .shapes span.circle { border-radius: 50%; border-color: #ff007f; }
+    .shapes span.square { border-color: #fff; }
+    .shapes span.triangle {
+      width: 0; height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ff3366;
+      background: none;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-900px) rotate(360deg); opacity: 0; }
+    }
+
+/* Floating animation */
+@keyframes floatDown {
+  0% {
+    transform: translateY(-120px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+    .container {
+      max-width: 950px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      border: 2px solid #6b0024;
+      box-shadow: 0 0 25px #e6024eaf, 0 0 35px #b1073ffb inset;
+      text-align: center;
+    }
+    .output-container {
+      background-color: #ce0e0063;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      min-height: 600px;
+      border: 2px solid #000000;
+      align-items: flex-start;
+      max-width: 950px;
+      margin: 3rem auto;
+     }
+
+    h1 {
+      color: #f0dbe0;
+      text-shadow: 0 0 15px #ff0055, 0 0 25px #ff0033;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .me-img {
+      display: block;
+      margin: 1rem auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ff007f;
+      object-fit: cover;
+      box-shadow: 0 0 25px #ff3366, 0 0 35px #ff0033;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.8);
+      text-shadow: 0 0 8px #ff007f;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+    li::before {
+      content: '▶ ';
+      color: #ff3366;
+      text-shadow: 0 0 10px #ff0055;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 0.95rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.9);
+      border-top: 2px solid #ff0055;
+    }
+    .navbar ul {
+      list-style-type: none;
+      background-color: #660022;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .navbar a{
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .navbar a:hover{
+      background-color: rgb(240, 56, 56); 
+      color: #fc7f7f;
+    }
+    .navbar li{
+      float: left;
+    }
+    .navbar::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    /* Family Section */
+    .family-section {
+      max-width: 950px;
+      margin: 3rem auto;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      border: 2px solid #ff0055;
+      box-shadow: 0 0 25px #ff0055;
+    }
+    .family-section h2 {
+      color: #ff3366;
+      text-shadow: 0 0 15px #ff0055;
+      margin-bottom: 20px;
+    }
+    .family-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .family-gallery img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff007f;
+      box-shadow: 0 0 20px #ff3366;
+      transition: transform 0.3s;
+    }
+    .family-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 0.95rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.9);
+      border-top: 2px solid #ff0055;
+    }
+
+
+    /* --- FAMILY SLIDER (no arrows, same background) --- */
+.wrapper {
+  margin: 0;
+  padding: 40px 0;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent; /* same as body background */
+}
+
+.wrapper h1 {
+  color: #f7e2e7;
+      text-shadow: 0 0 15px #ff0055, 0 0 25px #ff0033;
+      margin-top: 2rem;
+      text-align: center;
+}
+
+/* Slide container */
+.slide-container {
+  height: 500px;
+  width: 800%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid #ff007f;
+  box-shadow: 0 0 25px #ff0055, 0 0 35px #ff0033 inset;
+}
+
+/* Each image */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: slideShow 35s infinite;
+}
+
+/* Image fade sequence */
+.slide-image:nth-child(1) { animation-delay: 0s; }
+.slide-image:nth-child(2) { animation-delay: 5s; }
+.slide-image:nth-child(3) { animation-delay: 10s; }
+.slide-image:nth-child(4) { animation-delay: 15s; }
+.slide-image:nth-child(5) { animation-delay: 20s; }
+.slide-image:nth-child(6) { animation-delay: 25s; }
+.slide-image:nth-child(7) { animation-delay: 30s; }
+.slide-image:nth-child(8) { animation-delay: 35s; }
+.slide-image:nth-child(9) { animation-delay: 40s; }
+.slide-image:nth-child(10) { animation-delay: 45s; }
+.slide-image:nth-child(11) { animation-delay: 50s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Images */
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Navigation dots (just decorative) */
+.navigation-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.single-dot {
+  background-color: transparent;
+  height: 15px;
+  width: 15px;
+  border: 2px solid #ff007f;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3366;
+}
+
+.single-dot.active {
+  background: #ff007f;
+  box-shadow: 0 0 15px #ff007f;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>MY FAMILY</header>
+  <!-- Floating shapes -->
+  <div class="shapes">
+    <span class="circle" style="top:110%; left:0%; animation-delay:0s;"></span>
+    <span class="square" style="top:95%; left:5%; animation-delay:5s;"></span>
+    <span class="triangle" style="top:100%; left:10%; animation-delay:4s;"></span>
+    <span class="circle" style="top:90%; left:90%; animation-delay:2s;"></span>
+     
+    <span class="circle" style="top:110%; left:95%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:10%; animation-delay:0s;"></span> 
+   <span class="square" style="top:95%; left:80%; animation-delay:4s;"></span>
+    <span class="square" style="top:95%; left:86%; animation-delay:0s;"></span>
+    <span class="triangle" style="top:100%; left:70%; animation-delay:2s;"></span>
+       <span class="triangle" style="top:100%; left:5%; animation-delay:6s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:2s;"></span>
+
+    <span class="circle" style="top:110%; left:0%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:75%; animation-delay:2s;"></span>
+    
+
+
+   <span class="square" style="top:95%; left:25%; animation-delay:4s;"></span>
+ 
+    <span class="triangle" style="top:100%; left:15%; animation-delay:5s;"></span> 
+    <span class="triangle" style="top:100%; left:97%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:5s;"></span>
+    
+
+<nav class="navbar">
+  <ul>
+    <li><a href="aboutme.html">ABOUT ME</a></li>
+    <li><a href="family.html">FAMILY</a></li>
+    <li><a href="journey.html">JOURNEY</a></li>
+    <li><a href="myarts.html">HOBBIES</a></li>
+   
+    <li><a href="1.html"> HOME</a> </li>
+  </ul>
+  </nav>
+
+
+
+  <!-- Family Section -->
+  <h1>Meet My Family ❤️</h1>
+  <section class="family-section">
+    
+    <p>My family is my strength and inspiration. Here’s a glimpse of the people who mean the most to me.</p>
+    <div class="family-gallery">
+      <img src="images/mama.jpg" alt="Family Member 1">
+      <img src="images/papa.jpg" alt="Family Member 2">
+      <img src="images/atekim.jpg" alt="Family Member 3">
+      <img src="images/collegeme.jpg" alt="Family Member 4">
+      <img src="images/ella.jpg" alt="Family Member 5">
+      <img src="images/nj.jpg" alt="Family Member 6">
+      <img src="images/jacy.jpg" alt="Family Member 7">
+   
+    </div>
+
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <div class="wrapper">
+    <h1> FAMILY PICTURES </h1>
+
+   
+  
+    <div class="slide-container">
+      <div class="slide-image">
+        <img src="images/fampic1.jpg" alt="Family pic 1">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic2.jpg" alt="Family pic 2">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic4.jpg" alt="Family pic 3">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic5.jpg" alt="Family pic 4">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic6.jpg" alt="Family pic 5">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic7.jpg" alt="Family pic 6">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic9.jpg" alt="Family pic 7">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic10.jpg" alt="Family pic 8">
+      </div>
+        <div class="slide-image">
+          <img src="images/fampic11.jpg" alt="Family pic 9">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic12.jpg" alt="Family pic 10">
+      </div>
+      <div class="slide-image">
+        <img src="images/fampic13.jpg" alt="Family pic 11">
+      </div>
+    </div>
+  
+    
+    <div class="navigation-dots">
+      <div class="single-dot"></div>
+      <div class="single-dot active"></div>
+      <div class="single-dot"></div>
+    </div>
+  </div>
+  
+
+ </div>
+  <footer>
+    © 2025 Alleonah | Know me 🦑
+  </footer>
+</body>
+</html>
+
+
+
+

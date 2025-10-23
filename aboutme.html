@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALLEONAH DESUCATAN PROFILE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+    main{
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 0px;
+    }
+
+
+    
+    /* Animated gradient behind everything */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #330033, #660022, #ff0044,);
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Grid lines on top of gradient */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(#ff0055 1px, transparent 1px),
+        linear-gradient(90deg, #ff0055 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.2;
+      animation: moveGrid 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveGrid {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 60px 60px, 60px 60px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.8rem;
+      color: #ff007f;
+      text-shadow: 0 0 15px #ff007f, 0 0 30px #ff3366;
+      border-bottom: 3px solid #ff0055;
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    /* Floating Squid Game Shapes */
+    .shapes span {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 4px solid #fff;
+      animation: float 12s infinite;
+      opacity: 0.8;
+    }
+    .shapes span.circle { border-radius: 50%; border-color: #ff007f; }
+    .shapes span.square { border-color: #fff; }
+    .shapes span.triangle {
+      width: 0; height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ff3366;
+      background: none;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-900px) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      border: 2px solid #6b0024;
+      box-shadow: 0 0 25px #e6024eaf, 0 0 35px #b1073ffb inset;
+      text-align: center;
+    }
+    .output-container {
+      background-color: #ce0e0063;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      min-height: 600px;
+      border: 2px solid #000000;
+      align-items: flex-start;
+      max-width: 950px;
+      margin: 3rem auto;
+     }
+
+     h2 {
+      color: #ff3366;
+      text-shadow: 0 0 15px #4e001a, 0 0 25px #86031d;
+      margin-top: 2rem;
+      font-size: 30px;
+    }
+
+    .me-img {
+      display: block;
+      margin: 1rem auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 5px solid #ff007f;
+      object-fit: cover;
+      box-shadow: 0 0 25px #ff3366, 0 0 35px #ff0033;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.8);
+      text-shadow: 0 0 8px #ff007f;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+    li::before {
+      content: '▶ ';
+      color: #ff3366;
+      text-shadow: 0 0 10px #ff0055;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
+      font-size: 0.95rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.9);
+      border-top: 2px solid #ff0055;
+    }
+    .navbar ul {
+      list-style-type: none;
+      background-color: #660022;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .navbar a{
+      color: #aaa;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .navbar a:hover{
+      background-color: rgb(240, 56, 56); 
+      color: #fc7f7f;
+    }
+    .navbar li{
+      float: left;
+    }
+    .navbar::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ff99cc;
+  background: rgba(255, 0, 85, 0.15);
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 2px solid #ff007f;
+  font-weight: bold;
+  text-shadow: 0 0 10px #660022;
+  box-shadow: 0 0 12px #ff0055;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #ff007f;
+  color: #fff;
+  box-shadow: 0 0 25px #ff3366, 0 0 45px #86031d;
+  transform: scale(1.1);
+}
+
+  
+  </style>
+</head>
+<body>
+  <header>MY SELF PROFILE </header>
+  
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="aboutme.html">ABOUT ME</a></li>
+      <li><a href="family.html">FAMILY</a></li>
+      <li><a href="journey.html">JOURNEY</a></li>
+      <li><a href="myarts.html">HOBBIES</a></li>
+      
+      <li><a href="1.html"> HOME</a> </li>
+    </ul>
+    </nav>
+
+    
+  
+   
+  <!-- Floating shapes -->
+  <div class="shapes">
+    <span class="circle" style="top:110%; left:0%; animation-delay:0s;"></span>
+    <span class="square" style="top:95%; left:5%; animation-delay:2s;"></span>
+    <span class="triangle" style="top:100%; left:10%; animation-delay:1s;"></span>
+    <span class="circle" style="top:90%; left:90%; animation-delay:2s;"></span>
+     
+    <span class="circle" style="top:110%; left:95%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:10%; animation-delay:0s;"></span> 
+   <span class="square" style="top:95%; left:80%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:86%; animation-delay:0s;"></span>
+    <span class="triangle" style="top:100%; left:70%; animation-delay:2s;"></span>
+       <span class="triangle" style="top:100%; left:5%; animation-delay:0s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:2s;"></span>
+
+    <span class="circle" style="top:110%; left:0%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:75%; animation-delay:2s;"></span>
+    
+
+
+   <span class="square" style="top:95%; left:25%; animation-delay:1s;"></span>
+ 
+    <span class="triangle" style="top:100%; left:15%; animation-delay:0s;"></span> 
+    <span class="triangle" style="top:100%; left:97%; animation-delay:1s;"></span>
+    <span class="square" style="top:95%; left:100%; animation-delay:0s;"></span>
+    
+    <div class="output-container">
+      <img src="images/jobbeme.jpg" alt="My Picture" class="me-img">
+    <div class="badge">Player 227</div>
+<div class="output-container">
+    <h2>Basic Information</h2>
+    <ul>
+      <li>Name: ALLEONAH T. DESUCATAN</li>
+      <li>Nickname: YUNA/YON</li>
+      <li>Email:alleonahdesucatan43@gmail.com</li>
+      <li>Age: 18 YEARS OLD</li>
+      <li>Birthday: MARCH 27, 2007</li>
+      <li>Hometown: BABAG 2, PUROK SUPERSUNLIGHT,RADAR LAPU - LAPU CITY</li>
+      <li>School: LAPU - LAPU CITY COLLEGE</li>
+      <li>Course: BACHELOR IN INDUSTRIAL TACHNOLOGY - MAJOR IN COMPUTER </li>
+    </ul>
+
+    <h2>Likes & Dislike</h2>
+    <ul>
+      <li>Like:
+        <ol>EAT FOOD</ol>
+        <ol>DRAW</ol>
+        <ol>CLEANING</ol>
+        <ol>WATCH KDRAMA</ol>
+      </li>
+      <li>Dislike:
+        <ol>MESSY PLACE</ol>
+        <ol>RACIST PEOPLE</ol>
+      </li>
+    </ul>
+
+    <h2>My Favorites</h2>
+    <ul>
+      <li>Color: CYAN , BABY BLUE & LILAC</li>
+      <li>Food: LUMPIA & PANSIT 🍜</li>
+      <li>Delicacies: PUTO BONG-BONG, KUTSINTA & PASTA</li>
+      <li>Snacks: CHEESE RING & BENGBENG 🧀🍫</li>
+      <li>Entertainment: K-POP, KDRAMA, MOVIES OR ANIMATED MOVIES 🎶🎥</li>
+    </ul>
+
+    <h2>Follow Me On</h2>
+    <div class="social-links">
+      <a href="https://www.facebook.com/alleonah.desucatan.3?rdid=oUDCrK6x3km1vSAq&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17K8csw4ZZ%2F#" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/allyonzzzz/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@yonzz3333" target="_blank">TikTok</a>
+    </div>
+    
+</div>
+    
+    <audio controls autoplay src="Nebula.mp3">  </audio>
+    
+  </div>
+
+  
+  <footer>
+    © 2025 Alleonah | Know me 🦑
+  </footer>
+
+  
+
+
+  </script>
+</body>
+</html>
